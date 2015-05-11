@@ -1,0 +1,16 @@
+table {
+    border: 1px solid gray;
+}
+
+td  {
+    border: 1px solid gray;
+}
+
+.square {
+
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 18pt;
+    font-weight: bold;
+}
