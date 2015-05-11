@@ -1,26 +1,39 @@
 var squareArray = document.getElementsByClassName("square");
 var turn = 1;
 
+function startGame(){
+
+	document.getElementById("clear").addEventListener('click', function(){
+		for (var i=0; i<squareArray.length; i++){
+			squareArray[i].innerHTML= "";
+		}
+	});
+
+	nextMove();
+
+}
+
 function setMessage(msg) {
 	document.getElementById("message").innerHTML = msg;
 }
 
 function nextMove(){
-	for (var i=0; i<squareArray.length; i++){
-		squareArray[i].addEventListener('click', function(){
-			if (checkForWinner("X")) {
-				setMessage("Congratulation X! You win!")
 
+	for (var i=0; i<squareArray.length; i++){
+
+		squareArray[i].addEventListener('click', function(){
+			if(checkForWinner("X")){
+				setMessage("Congratulation X! You win!")
 			}else if (checkForWinner("O")){
 				setMessage("Congratulation O! You win!")
-
-			} else if (this.innerHTML == ""){
+			}else if (this.innerHTML == ""){
 				this.innerHTML = switchTurn();
 			}else {
 				setMessage("That square is already used");
 			}
 
 		});
+
 	}
 
 }
@@ -41,7 +54,7 @@ function switchTurn(){
 			document.getElementById("message").innerHTML = "It's X's turn!"
 			return "O";
 		}
-	// }
+	//}
 }
 
 function checkForWinner(move) {
