@@ -1,1 +1,1 @@
-window.addEventListener("load", startGame);
+window.addEventListener("load", nextMove);
